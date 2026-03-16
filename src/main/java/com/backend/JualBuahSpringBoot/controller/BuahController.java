@@ -21,7 +21,6 @@ public class BuahController {
     @GetMapping
     // GET semua buah
     public List<Buah> getAll(){
-        // abstraction, controller memanggil data dari service tanpa tahu bagaimana data diolah
         return buahService.getAllBuah();
     }
 
