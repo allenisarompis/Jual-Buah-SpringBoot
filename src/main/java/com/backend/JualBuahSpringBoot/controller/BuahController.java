@@ -8,7 +8,8 @@ import com.backend.JualBuahSpringBoot.model.Buah;
 import com.backend.JualBuahSpringBoot.service.BuahService;
 
 
-@RestController
+@RestController 
+// End point untuk mengakses API, misal: http://localhost:8080/api/buah
 @RequestMapping("/api/buah")
 public class BuahController {
     private final BuahService buahService;
@@ -18,8 +19,16 @@ public class BuahController {
     }
 
     @GetMapping
+    // GET semua buah
     public List<Buah> getAll(){
+        // abstraction, controller memanggil data dari service tanpa tahu bagaimana data diolah
         return buahService.getAllBuah();
+    }
+
+    // GET buah berdasarkan ID
+    @GetMapping("/{id}")
+    public Buah getById(@PathVariable Long id){
+        return buahService.getBuahById(id);
     }
 
     @PostMapping

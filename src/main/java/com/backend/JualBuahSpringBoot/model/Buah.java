@@ -1,7 +1,6 @@
 package com.backend.JualBuahSpringBoot.model;
 
 public class Buah {
-    
     private Long id;
     private String nama;
     private double harga;

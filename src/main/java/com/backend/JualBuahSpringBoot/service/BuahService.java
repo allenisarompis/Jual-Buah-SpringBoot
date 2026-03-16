@@ -11,8 +11,19 @@ import com.backend.JualBuahSpringBoot.model.Buah;
 public class BuahService {
     private List<Buah> daftarBuah = new ArrayList<>();
 
+    // Get semua buah
     public List<Buah> getAllBuah(){
         return daftarBuah;
+    }
+
+    // GET buah berdasarkan ID
+    public Buah getBuahById(Long id){
+        for(Buah buah : daftarBuah){
+            if(buah.getId().equals(id)){
+                return buah;
+            }
+        }
+        return null;
     }
 
     public Buah tambahBuah(Buah buah){
